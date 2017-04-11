@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>All Todo Lists</h1>
+
+<div class="row">
+  <div class="col-md-3 inline">
+    Title
+  </div>
+  <div class="col-md-3 inline">
+    Description
+  </div>
+</div>
+<hr/>
+<div class="row">
+    <% @todo_lists.each do |todo_list| %>
+        <div class="col-md-3 inline">
+          <%= link_to todo_list.title, todo_list %>
+        </div>
+        <div class="col-md-3 inline">
+          <%= todo_list.description %>
+        </div>
+        <div class="col-md-3 inline">
+          <%= link_to 'Edit', edit_todo_list_path(todo_list) %> |
+          <%= link_to 'Delete', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+<% end %>
+</div>
+
+<br>
+
+<%= link_to 'New Todo list', new_todo_list_path %>

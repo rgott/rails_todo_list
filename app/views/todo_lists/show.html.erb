@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><%= @todo_list.title %></div>
+  <div class="alert-info"><%= @todo_list.description %></div>
+  <div class="panel-body">
+    <ul class="list-group">
+      <%= render @todo_list.todo_items %>
+    </ul>
+  </div>
+  <div class="panel-footer">
+    <div id="form">
+      <%= render "todo_items/form" %>
+    </div>
+  </div>
+</div>
+
+
+
+<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
+<%= link_to 'Delete', todo_list_path(@todo_list),method: :delete, data: { confirm: "Are you sure?"} %> |
+<%= link_to 'Back', todo_lists_path %>
