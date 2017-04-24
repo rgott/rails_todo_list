@@ -16,11 +16,13 @@
         <p><%= todo_item.content %></p>
       </div>
       <div class="pull-right">
-        <div class="complete">
+        <div class="inline">
+          <%= link_to "UP", moveup_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>
+          |
+          <%= link_to "Down", movedown_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>
+          |=|
           <%= link_to "Done", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>
-        </div>
-        |
-        <div class="trash">
+          |
           <%= link_to "Delete", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "Are you sure?"} %>
         </div>
       </div>

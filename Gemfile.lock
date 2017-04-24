@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/swanandp/acts_as_list.git
+  revision: 84f742a90e8c4bb54351a956cf7fa474895e28d9
+  specs:
+    acts_as_list (0.9.5)
+      activerecord (>= 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -52,8 +59,8 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.7.0)
-    globalid (0.3.7)
-      activesupport (>= 4.1.0)
+    globalid (0.4.0)
+      activesupport (>= 4.2.0)
     i18n (0.8.1)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
@@ -144,6 +151,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  acts_as_list!
   byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)

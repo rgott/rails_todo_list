@@ -18,8 +18,20 @@ class TodoItemsController < ApplicationController
 
   def complete
     @todo_item.update_attribute(:completed_at, Time.now)
-    redirect_to @todo_list, notice: "Todo item completed"
+    redirect_to @todo_list, notice: "Moved Down"
   end
+
+  def moveup
+    @todo_item.update(position: @todo_item.position - 1)
+    redirect_to @todo_list, notice: "#{@todo_item.content} Moved Up"
+  end
+
+  def movedown
+    @todo_item.update(position: @todo_item.position + 1)
+    redirect_to @todo_list, notice:  "#{@todo_item.content} Moved Down"
+
+  end
+
 
   def notcomplete
     @todo_item.update_attribute(:completed_at, nil)
